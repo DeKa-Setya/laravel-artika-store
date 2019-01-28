@@ -2,6 +2,10 @@
 
 @section('content')
 
+  @if(Session::has('message'))
+  <p class="alert alert-info">{{ Session::get('message') }}</p>
+  @endif
+  
   <div class="modal fade" id="listopen" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">

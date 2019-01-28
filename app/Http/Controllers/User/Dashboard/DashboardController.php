@@ -19,7 +19,13 @@ class DashboardController extends Controller
   public function index()
   {
       $item = InputItem::where('is_deleted',0)->paginate(10);
-      return view('user.dashboard.index', compact('item'));
+
+      if (isset($_GET['orderfinished'])){
+        return view('user.dashboard.index', compact('item'))->with('message', 'Order Has Been Proceed');
+      }
+      else{
+        return view('user.dashboard.index', compact('item'));
+      }
   }
 
   public function store(Request $request, Cart $cart){

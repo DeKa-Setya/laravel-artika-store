@@ -343,7 +343,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-toggle="collapse" href="#" aria-expanded="false" aria-controls="ui-basic">
+                <a class="nav-link" data-toggle="collapse" href="{{ route('orderlist.index') }}" aria-expanded="false" aria-controls="ui-basic">
                   <i class="mdi mdi-puzzle-outline menu-icon"></i>
                   <span class="menu-title">Daftar Pesanan</span>
                 </a>
