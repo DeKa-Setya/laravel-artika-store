@@ -20,7 +20,7 @@ class DashboardController extends Controller
   {
       $item = InputItem::where('is_deleted',0)->paginate(10);
 
-      if (isset($_GET['orderfinished'])){
+      if (isset($_GET['orderfinished=true'])){
         return view('user.dashboard.index', compact('item'))->with('message', 'Order Has Been Proceed');
       }
       else{
@@ -67,13 +67,13 @@ class DashboardController extends Controller
       else {
         $i = 1;
         $html = "<div class='row'>";
-          $html .= "<div class='col-sm-12 col-lg-12'>";
+          $html .= "<div class='col-12 col-sm-12'>";
             $html .= "<table class='table table-striped'>";
               $html .= "<tbody>";
                 foreach ($c as $key) {
                   $html .= "<tr>";
                     $html .= "<td><a href='javascript:void(0)' onclick='removeItem(\"".$key->rowId."\")' class='text-danger'>&times;</a></td>";
-                    $html .= "<td width='100px'><img src='". asset("picture/inputitem/".$key->picture) ."' width='100px'/></td>";
+                    $html .= "<td class='image-item'><img src='". asset("picture/inputitem/".$key->picture) ."'/></td>";
                     $html .= "<td><strong>".$key->name."</strong></td>";
                     $html .= "<td>";
                     $html .= "<div class='btn-group btn-group-sm' role='group' aria-label='First Group'>";

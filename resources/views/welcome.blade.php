@@ -3,7 +3,7 @@
 @section('content')
 
   <section class="jumbotron text-center">
-    <div class="container body">
+    <div class="container body margin">
       <h1 class="jumbotron-heading">Selamat Datang di Artika Store</h1>
       <p class="lead text-muted">Inilah Dagangan Kami. Selamat Belanja dan Selamat Menikmati. </p>
       <p>

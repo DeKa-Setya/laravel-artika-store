@@ -10,13 +10,13 @@
 
 
     <link rel="stylesheet" href="{{ asset('iconfonts/mdi/font/css/materialdesignicons.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/horizontal-layout/css/vendor.bundle.base.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/horizontal-layout/css/vendor.bundle.addons.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/vendor.bundle.base.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/vendor.bundle.addons.css') }}">
     <!-- endinject -->
     <!-- plugin css for this page -->
     <!-- End plugin css for this page -->
     <!-- inject:css -->
-    <link rel="stylesheet" href="{{ asset('css/vertical-layout-light/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <!-- endinject -->
     <link rel="shortcut icon" href="{{ asset('favicon.png') }}" />
 

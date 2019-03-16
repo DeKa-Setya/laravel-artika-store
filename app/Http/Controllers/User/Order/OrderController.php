@@ -25,7 +25,6 @@ class OrderController extends Controller
     public function index(Request $request, Cart $cart)
     {
         $province = Indonesia::allProvinces();
-// dd($province,$district,$subdistrict,$village);
         $c = $cart->content();
         $total = $cart->total();
         return view('user.order.index', compact('c', 'total', 'province'));
@@ -75,7 +74,7 @@ class OrderController extends Controller
     {
         try {
           $temp = Indonesia :: findDistrict($request->id, [ 'villages' ]);
-         $village = $temp->villages;
+          $village = $temp->villages;
           $html = "";
           $html .= "<option value=''>-Pilih Desa-</option>";
           foreach ($village as $key) {
@@ -99,6 +98,7 @@ class OrderController extends Controller
           $sale = new Sale;
           $TempTotal = $cart->total();
           $total = (double)$TempTotal;
+
 
           $record = Sale::orderBy('id', 'desc')->first();
 
@@ -130,9 +130,10 @@ class OrderController extends Controller
             }
           }
 
+
           $sale->user_id = Auth::id();
           $sale->sales_code = $salescode;
-          $sale->delivery_address = $request->delivery." Desa ".$villages.", Kecamatan ".$subdistricts.", ".$districts.",".$provinces;
+          $sale->delivery_address = $request->delivery." Desa ".$villages.", Kecamatan ".$subdistricts.", ".$districts.", ".$provinces;
           $sale->billing_address = $request->billing." Desa ".$villages.", Kecamatan ".$subdistricts.", ".$districts.",".$provinces;
           $sale->total = $total;
           $sale->save();
@@ -149,10 +150,12 @@ class OrderController extends Controller
                 $orderdetail->save();
                 $inputitem->save();
             }
+
           $cart->destroy();
 
           return response()
-            ->json(['status' => true, 'description' => 'Kuantitas berhasil ditambah!']);
+            ->json(['status' => true, 'description' => 'Pesanan Sukses !']);
+
 
 
         } catch (\Exception $e) {
@@ -176,7 +179,7 @@ class OrderController extends Controller
         $village = $tempVillage->name;
 
         $html = "";
-        $html .= "<div class='row'>";
+        $html .= "<div class='row container'>";
         $html .= "<h3 class='header'>Rincian Pesanan</h3>";
         $html .= "<div class='col-sm-12 col-lg-8 container'>";
         $html .= "<table>";

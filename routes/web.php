@@ -37,7 +37,9 @@ Route::prefix('admin')->group(function(){
     // input items
     Route::resource('inputitem', 'Admin\Item\InputItemController');
     //order list
-    Route::resource('orderlist','Admin\OrderList\OrderListController');
+    Route::get('/orderlist', 'Admin\OrderList\OrderListController@index');
+    Route::post('/orderlist/accept', 'Admin\OrderList\OrderListController@accept');
+    Route::post('/orderlist/decline', 'Admin\OrderList\OrderListController@decline');
 });
 Route::get('/dashboard', 'User\Dashboard\DashboardController@index');
 Route::post('/dashboard', 'User\Dashboard\DashboardController@store');

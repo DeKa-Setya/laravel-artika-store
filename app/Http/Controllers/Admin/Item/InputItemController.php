@@ -32,8 +32,8 @@ class InputItemController extends Controller
           })
             ->addColumn('action', function($item){
               return '<div class="btn-group btn-group-sm" role="group" aria-label="First Group">' .
-                '<button onclick="showDetail(\''.json_encode($item).'\')" class="btn btn-light"><i class="fa fa-eye"></i>Show</button> ' .
-                '<button onclick="openPopup('. json_encode($item) .')" class="btn btn-light"><i class="fa fa-edit"></i>Edit</button> ' .
+                '<button onclick="showDetail(\''.json_encode($item).'\')" class="btn btn-light"><i class="fa fa-eye"></i>Show</button>' .
+                '<button onclick="openPopup('. json_encode($item) .')" class="btn btn-light"><i class="fa fa-edit"></i>Edit</button>' .
                 '<button onclick="delete('. json_encode($item) .')" class="btn btn-light"><i class="mdi mdi-delete-empty"></i>Delete</button>' .
                 '</div>';
             })
@@ -147,7 +147,8 @@ class InputItemController extends Controller
      */
     public function destroy($id)
     {
-      $item = InputItem::findOrFail($id)->is_deleted += 1;
+      $item = InputItem::findOrFail($id);
+      $item->is_deleted += 1;
       return redirect()->route('admin.inputitem.index')->with('message', 'berhasil dihapus !');
     }
 }

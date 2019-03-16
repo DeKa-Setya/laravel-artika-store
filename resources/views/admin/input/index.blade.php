@@ -7,14 +7,12 @@
     <div class="card">
       <div class="card-body">
         <h4 class="card-title">Input Barang</h4>
-        <div class="d-flex table-responsive">
-          <div class="btn-group mr-2">
+        <div class="table-responsive">
+          <div class="btn-group mr-2" style="padding-bottom:25px;">
             <a onclick="addForm()" class="btn btn-sm btn-primary" href="#modal-form"><i class="mdi mdi-plus-circle-outline"></i> Add</a>
           </div>
-        </div>
         <!--end modal-->
-        <div class="table-responsive mt-3">
-          <table id="item-table" class="table mt-2">
+          <table id="item-table" class="table">
             <thead>
               <tr>
                 <th>ID</th>

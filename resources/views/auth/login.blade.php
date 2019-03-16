@@ -2,8 +2,6 @@
 
 @section('content')
 
-  <h4>Hello! let's get started</h4>
-  <h6 class="font-weight-light">Sign in to continue.</h6>
   <form class="pt-3" method="POST" action="{{ route('login') }}">
     {{ csrf_field() }}
     <div class="form-group">

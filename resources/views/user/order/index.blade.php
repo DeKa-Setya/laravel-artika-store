@@ -158,7 +158,7 @@
       data: $("#addressdetail").serialize(),
       success: function (data){
         if (data.status) {
-          window.location.href('/dashboard?orderfinished=true');
+          window.location.href = '/dashboard?orderfinished=true';
         }
         else {
           console.log(data);
